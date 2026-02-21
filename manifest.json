@@ -1,0 +1,23 @@
+{
+  "name": "schulapps.at - Interaktive Tools für den Unterricht",
+  "short_name": "schulapps",
+  "description": "Interaktive Tools für den Unterricht",
+  "theme_color": "#6366f1",
+  "background_color": "#e0e7ff",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/logo_schulapps.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo_schulapps.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
