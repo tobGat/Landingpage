@@ -1,0 +1,35 @@
+name: Deploy Landing Page
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Deploy via SCP
+        run: |
+          scp -r \
+            index.html \
+            favicon.png \
+            logo_schulapps.png \
+            grupo_logo.png \
+            grupo_schriftzug.png \
+            ssc_logo.png \
+            votr_logo.svg \
+            cloudia_logo.svg \
+            manifest.json \
+            sw.js \
+            root@46.225.168.25:/var/www/landing/
