@@ -21,15 +21,4 @@ jobs:
 
       - name: Deploy via SCP
         run: |
-          scp -r \
-            index.html \
-            favicon.png \
-            logo_schulapps.png \
-            grupo_logo.png \
-            grupo_schriftzug.png \
-            ssc_logo.png \
-            votr_logo.svg \
-            cloudia_logo.svg \
-            manifest.json \
-            sw.js \
-            root@46.225.168.25:/var/www/landing/
+          scp -r ./ root@46.225.168.25:/var/www/landing/
